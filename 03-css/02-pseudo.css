@@ -1,4 +1,9 @@
 .container {
-  width: 600px;
-  margin: 40px auto;
+    width: 600px;
+    margin: 40px auto;
+}
+
+p::first-letter {
+    font-weight: bold;
+    font-size: 3em;
 }
