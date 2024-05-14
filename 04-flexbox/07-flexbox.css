@@ -1,37 +1,37 @@
 .flex-container {
-    background-color: rgb(190, 190, 231);
-    height: 600px;
-    width: 600px;
-    gap: 0.75rem;
+  background-color: rgb(190, 190, 231);
+  height: 600px;
+  width: 600px;
+  gap: 0.75rem;
 }
 
 .flex-item {
-    width: 100px;
-    height: 105px;
-    margin: 10px 0 10px 0;
+  width: 100px;
+  height: 105px;
+  margin: 10px 0 10px 0;
 }
 
 /* Flex Container 1 */
 .flex-container-1 {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    align-content: flex-start;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-content: flex-start;
 }
 
 /* Flex Container 2 */
 .flex-container-2 {
-    display: flex;
-    flex-flow: row-reverse wrap;
-    align-content: flex-start;
+  display: flex;
+  flex-flow: row-reverse wrap;
+  align-content: flex-start;
 }
 
 /* Flex Container 3 */
 .flex-container-3 {
-    display: flex;
-    flex-flow: column-reverse wrap;
-    align-items: flex-end;
-    padding-right: 20px;
+  display: flex;
+  flex-flow: column-reverse wrap;
+  align-items: flex-end;
+  padding-right: 20px;
 }
 
 /* use height: 400px; on the container */
@@ -39,41 +39,41 @@
 /* Flex Container 4 */
 
 .flex-container-4 {
-    display: flex;
-    flex-flow: row wrap-reverse;
-    align-content: flex-end;
-    justify-content: space-around;
-    padding: 10px;
+  display: flex;
+  flex-flow: row wrap-reverse;
+  align-content: flex-end;
+  justify-content: space-around;
+  padding: 10px;
 }
 
 /* Flex Container 5 */
 .flex-container-5 {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 .flex-container-5 .item1,
 .flex-container-5 .item3,
 .flex-container-5 .item6 {
-    height: 150px;
+  height: 150px;
 }
 
 .flex-container-5 .item2,
 .flex-container-5 .item8 {
-    height: 200px;
+  height: 200px;
 }
 
 /* Flex Container 6 */
 
 .flex-container-6 .flex-item {
-    width: 180px;
+  width: 180px;
 }
 
 .flex-container-6 {
-    height: 400px;
-    display: flex;
-    flex-flow: column wrap;
-    align-items: start;
+  height: 400px;
+  display: flex;
+  flex-flow: column wrap;
+  align-items: start;
 }
 
 /* use height: 300px; on the container */
