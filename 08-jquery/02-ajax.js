@@ -1,52 +1,38 @@
-const url = 'https://anapioficeandfire.com/api/books/';
+const url = "https://anapioficeandfire.com/api/books/";
 
-const app = document.querySelector('#books');
-app.style.paddingLeft = 0;
-const loading = document.querySelector('#loading');
+$("document").ready(() => {
+  const url = "https://anapioficeandfire.com/api/books/";
 
-const addBookToDOM = (item) => {
-  console.log(item);
-  let element = document.createElement('div');
-  let title = document.createElement('h4');
-  let author = document.createElement('p');
-  let published = document.createElement('p');
-  let pages = document.createElement('p');
+  const addBookToDom = (book) => {
+    $("#books").append(
+      $("<div>")
+        .addClass("text-center book")
+        .append($("<h2>").text(book.name))
+        .append($("<p>").text(`Author: ${book.authors}`))
+        .append(
+          $("<p>").text(
+            `Publication Year: ${new Date(book.released).getUTCFullYear()}`,
+          ),
+        )
+        .append($("<p>").text(`Number of Pages: ${book.numberOfPages}`)),
+    );
+  };
 
-  element.style.display = 'flex';
-  element.style.flexDirection = 'column';
-  element.style.alignItems = 'center';
-  element.style.marginTop = '20px';
-
-  title.textContent = item.name;
-  author.textContent = `by ${item.authors[0]}`;
-  published.textContent = item.released.substr(0, 4);
-  pages.textContent = `${item.numberOfPages} pages`;
-
-  element.append(title);
-  element.append(author);
-  element.append(published);
-  element.append(pages);
-
-  app.append(element);
-};
-
-const fetchData = (url) => {
-  fetch(url)
-    .then((response) => response.json())
-    .then((data) => {
-      data.forEach((item) => {
-        addBookToDOM(item);
-      });
-    })
-    .catch((error) => {
-      console.log(error);
-      let li = document.createElement('li');
-      li.textContent = `An error occured. Please try again.`;
-      app.append(li);
-    })
-    .finally(() => {
-      app.removeChild(loading);
+  const fetchData = (url) => {
+    $.ajax({
+      type: "GET",
+      url: url,
+      success: (data) => {
+        $("#loading").hide();
+        data.forEach((book) => {
+          addBookToDom(book);
+        });
+      },
+      error: (error) => {
+        $("#loading").text("Error loading books");
+      },
     });
-};
+  };
 
-fetchData(url);
+  fetchData(url);
+});
